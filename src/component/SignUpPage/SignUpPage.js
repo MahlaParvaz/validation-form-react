@@ -5,6 +5,8 @@ import * as Yup from 'yup';
 import Input from '../common/Input';
 import Terms from '../common/Terms';
 import PasswordInput from '../common/PasswordInput';
+import { Link } from 'react-router-dom';
+
 const initialValues = {
   name: '',
   email: '',
@@ -129,6 +131,10 @@ const SignUpPage = () => {
           {/* The button is always enabled */}
           <span>Signup</span>
         </button>
+        <Link to="/login" className='login'>
+            Have you account?
+            <span>Login</span>
+        </Link>
       </form>
     </div>
   );
