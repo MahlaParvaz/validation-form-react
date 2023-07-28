@@ -17,8 +17,7 @@ const PasswordInput = ({ formik, name, placeholder, label }) => {
           type={showPassword ? 'text' : 'password'}
           id={name}
           name={name}
-          value={formik.values[name]}
-          onChange={formik.handleChange}
+          {...formik.getFieldProps(name)}
           placeholder={placeholder}
           autoComplete="off"
         />
