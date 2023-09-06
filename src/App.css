@@ -17,7 +17,7 @@ body::-webkit-scrollbar {
   font-family: 'Inter', sans-serif;
   background-color: #fff;
   border-radius: 5px;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .signUpForm {
   display: flex;
@@ -27,7 +27,7 @@ body::-webkit-scrollbar {
   width: 90%;
   display: flex;
   justify-content: flex-start;
-  margin: 30px 0px 60px 50px;
+  margin: 30px 0px 40px 50px;
 }
 form {
   display: flex;
@@ -105,12 +105,14 @@ input::placeholder {
 }
 .logo img {
   width: 400px;
-  height: 610px;
+  height: 630px;
+
   display: flex;
   justify-content: center;
   padding: 0;
   margin: 0;
 }
+
 .password-input-container {
   width: 100%;
   padding: 0 25px 0 0;
@@ -122,13 +124,16 @@ input::placeholder {
   color: #898889;
   border: 1px solid #ccc;
 }
-.login {
+.login,
+.signup {
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
+  margin-bottom: 1rem;
 }
-.login span {
+.login span,
+.signup span {
   margin-left: 4px;
   color: blue;
 }
@@ -148,32 +153,23 @@ input::placeholder {
 .title span {
   margin-left: 50px;
 }
-/* @media (min-width: 1024px) {
-  form {
-    width: 100%;
-  }
-  input {
-    width: 400px;
-    height: 30px;
-    padding: 8px 12px;
-  }
 
-  button {
-    padding: 8px 12px;
-    width: 425px;
-    height: 40px;
-
-    font-size: 16px;
-  }
-  input::placeholder {
-    font-size: 14px;
-  }
-  .error {
-    font-size: 14px;
+@media (max-width: 768px) {
+  .App {
     width: 400px;
+    height: 650px;
+    margin-top: 0px;
   }
-  .logo {
-    width: 430px;
-    height: 450px;
+  .signUpForm {
+    flex-direction: column;
   }
-} */
+  .logo img {
+    display: none;
+  }
+  .formStyle h2 {
+    margin: 30px 0px 40px 10px;
+  }
+  .title span {
+    margin-left: 10px;
+  }
+}

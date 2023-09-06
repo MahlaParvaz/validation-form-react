@@ -1,15 +1,15 @@
 // import React, { useEffect, useState } from 'react';
 import userImage from '../../assets/img/logo.png';
-// import { useFormik } from 'formik';
-// import * as Yup from 'yup';
 import Input from '../common/Input';
 import Terms from '../common/Terms';
 import PasswordInput from '../common/PasswordInput';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 const LoginPage = ({ formikLogin, handleSubmit }) => {
+  const history = useHistory();
   const onClick = (event) => {
-    event.target.reset();
-    // Handle form data and submit logic here
+    event.preventDefault();
+    // event.target.reset();
+    history.push('/');
   };
   return (
     <div className="signUpForm">
