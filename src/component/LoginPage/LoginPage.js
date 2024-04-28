@@ -1,9 +1,10 @@
 // import React, { useEffect, useState } from 'react';
-import userImage from '../../assets/img/logo.png';
 import Input from '../common/Input';
 import Terms from '../common/Terms';
 import PasswordInput from '../common/PasswordInput';
 import { Link, useHistory } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const LoginPage = ({ formikLogin, handleSubmit }) => {
   const history = useHistory();
   const onClick = (event) => {
@@ -11,10 +12,19 @@ const LoginPage = ({ formikLogin, handleSubmit }) => {
     // event.target.reset();
     history.push('/');
   };
+
+  const handleLoginClick = () => {
+    const isLoginSuccessful = true;
+    if (isLoginSuccessful) {
+      toast.success('Login Successful', { autoClose: 3000 });
+    } else {
+      toast.error('Login Failed');
+    }
+  };
   return (
     <div className="signUpForm">
       <div className="logo">
-        <img src={userImage} alt="logo" />
+        <img src="/img/logo.png" alt="logo" />
       </div>
 
       <form className="formStyle" onSubmit={handleSubmit}>
@@ -38,7 +48,11 @@ const LoginPage = ({ formikLogin, handleSubmit }) => {
         />
 
         <Terms formik={formikLogin} name="terms" label="Remember for 30 days" />
-        <button className="formControl" type="submit">
+        <button
+          className="formControl"
+          type="submit"
+          onClick={handleLoginClick}
+        >
           {' '}
           {/* The button is always enabled */}
           <span>Login</span>
@@ -48,6 +62,7 @@ const LoginPage = ({ formikLogin, handleSubmit }) => {
           <span>Sign Up</span>
         </Link>
       </form>
+      <ToastContainer />
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import userImage from '../../assets/img/logo.png';
 import Input from '../common/Input';
 import Terms from '../common/Terms';
 import PasswordInput from '../common/PasswordInput';
@@ -8,7 +7,7 @@ const SignUpPage = ({ formik, handleSubmit }) => {
   return (
     <div className="signUpForm">
       <div className="logo">
-        <img src={userImage} alt="logo" />
+        <img src="/img/logo.png" alt="logo" />
       </div>
 
       <form className="formStyle" onSubmit={handleSubmit}>
